@@ -20,7 +20,7 @@
                     
             {!!Form::open(['url'=>'/login','class'=>'form form-horizontal'])!!}
             <fieldset>
-                <div class="form-group">
+                {{--                <div class="form-group">
                     <label class="control-label">Ente</label>
                     <input class="form-control" placeholder="Ente" name="ente" type="text" autofocus>
                 </div>
@@ -28,11 +28,12 @@
                     <label class="control-label">Matricola</label>
                     <input class="form-control" placeholder="matricola" name="matr" type="text" autofocus>
                 </div>
-                {{--
+                --}}
+                
                 <div class="form-group">
                     <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
                 </div>
-                --}}
+                
                 <div class="form-group">
                     <label class="control-label">Password</label>
                     <input class="form-control" placeholder="Password" name="password" type="password" value="">
