@@ -9,7 +9,6 @@
 
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">
-                            <strong>Whoops!</strong> There were some problems with your input.<br><br>
                             <ul>
                                 @foreach ($errors->all() as $error)
                                     <li>{{ $error }}</li>
@@ -21,25 +20,19 @@
             {!!Form::open(['url'=>'/login','class'=>'form form-horizontal'])!!}
             <fieldset>
                 <div class="form-group">
-                    <label class="control-label">Ente</label>
-                    <input class="form-control" placeholder="Ente" name="ente" type="text" autofocus>
+                    <label class="control-label">Username/Email</label>
+                    <input class="form-control" placeholder="Username/Email" name="user_email" type="text" value="{!! old('user_email') !!}" autofocus>
                 </div>
-                <div class="form-group">
-                    <label class="control-label">Matricola</label>
-                    <input class="form-control" placeholder="matricola" name="matr" type="text" autofocus>
-                </div>
-                {{--
-                <div class="form-group">
-                    <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
-                </div>
-                --}}
                 <div class="form-group">
                     <label class="control-label">Password</label>
                     <input class="form-control" placeholder="Password" name="password" type="password" value="">
                 </div>
                 <div class="checkbox">
                     <label>
-                    <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                    <input name="remember" type="checkbox" value="Remember Me" @if(old('remember')) checked @endif>Remember Me
+                    </label>
+                    <label style="float: right;">
+                        <a href="{{route('password.request', csrf_token())}}">Forgot your password?</a>
                     </label>
                 </div>
                 <!-- Change this to a button or input when using this as a form -->
