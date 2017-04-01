@@ -1,6 +1,11 @@
 @extends ('adm_theme::layouts.plane')
+<<<<<<< HEAD:auth/passwords/reset.blade.php
 
 @section('body')
+=======
+@section ('body') 
+
+>>>>>>> d850bae32f2a79f6fc9cfd64028e0f03f67ad823:auth/reset.blade.php
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
