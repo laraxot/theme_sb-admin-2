@@ -1,7 +1,4 @@
-@if (\Auth::guest())
-    <li><a href="{{ route('login') }}">Login</a></li>
-    {{--<li><a href="{{ url('/register') }}">Register</a></li> --}}
-@else
+@if (\Auth::check())
 <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
     <i class="fa fa-user fa-fw"></i>   {{ Auth::user()->name() }} <i class="fa fa-caret-down"></i>
@@ -26,7 +23,6 @@
                         {{ csrf_field() }}
           </form>
         </li>
-
     </ul>
     <!-- /.dropdown-user -->
 </li>
