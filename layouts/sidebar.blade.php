@@ -15,9 +15,9 @@
             </li>  
         --}}
 <?php 
-    $menus=App\Library\XMLMENU_OP::get();
-    $menus=App\Library\ARRAY_OP::array_raggruppa([ 'data'=>$menus,'key'=>['id_padre'] ]);
-    //$menus=[]
+    //$menus=Xot\Extend\Library\XMLMENU_OP::get();
+    //$menus=Xot\Extend\Library\ARRAY_OP::array_raggruppa([ 'data'=>$menus,'key'=>['id_padre'] ]);
+    $menus=Theme::getXmlMenu();
 ?>
             @if(isset($menus[0]))
             @foreach($menus[0] as $el)
