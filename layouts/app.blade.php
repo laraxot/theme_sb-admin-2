@@ -1,3 +1,4 @@
+@include('backend::includes.components')  
 @extends('adm_theme::layouts.plane')
 @section('body')
  <div id="wrapper">
@@ -37,7 +38,9 @@
                 <!-- /.col-lg-12 -->
            </div>
            <div id="div_debug"></div>
-			<div class="row">  
+			<div class="row">
+                @include('backend::includes.flash')
+               
 				@yield('section')
 				@yield('content')
             </div>
