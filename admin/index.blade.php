@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @extends('adm_theme::layouts.app')
 @section('content')
 
@@ -8,6 +7,3 @@
 @endforeach
 
 @endsection
-=======
-welcome !
->>>>>>> 3f0a51e1be8370f7d35ce98fd39108fa6144e867
