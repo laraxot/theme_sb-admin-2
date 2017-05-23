@@ -1,9 +1,9 @@
 if (typeof TinyMCE == 'undefined') {
- 	$.getScript(base_url+'/theme/bc/tinymce/tinymce.min.js', function() {
-	$.getScript(base_url+'/theme/bc/tinymce/jquery.tinymce.min.js', function() {
+ 	$.getScript(base_url+'/bc/tinymce/tinymce.min.js', function() {
+	$.getScript(base_url+'/bc/tinymce/jquery.tinymce.min.js', function() {
 		window.tinymce.dom.Event.domLoaded = true;
 		//alert('Loaded!');
-		tinymce.baseURL=base_url+'/theme/bc/tinymce';
+		tinymce.baseURL=base_url+'/bc/tinymce';
 		tinymce.suffix = '.min';
 		tinymce.init({
 			selector: 'textarea.tinymce',
