@@ -11,7 +11,7 @@
                     </div>
                     <div class="panel-body" style="text-align:center;">
                         <a href="{{ $row->a_href() }}">
-                            <img src="{{$row->controller_path}}/menu/icon.png" style="width:50px;height:50px;"/>
+                            <img src="{{$row->icon_src()}}" style="width:50px;height:50px;"/>
                         </a>
                     </div>
                 </div>
