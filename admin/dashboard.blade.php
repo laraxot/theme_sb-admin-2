@@ -2,7 +2,7 @@
 @section('page_heading','DashBoard')
 
 @section('content')
-    <div>
+    <div>  
         @foreach(\Auth::User()->areas()->get() as $row)
             <div class="col-lg-2">
                 <div class="panel panel-default">
