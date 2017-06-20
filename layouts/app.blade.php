@@ -39,8 +39,6 @@
            </div>
            <div id="div_debug"></div>
 			<div class="row">
-                @include('backend::includes.flash')
-               
 				@yield('section')
 				@yield('content')
             </div>

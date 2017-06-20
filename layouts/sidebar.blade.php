@@ -14,19 +14,19 @@
                 <!-- /input-group -->
             </li>  
         --}}
-<?php 
+@php
     //$menus=XRA\Extend\Library\XMLMENU_OP::get();
     //$menus=XRA\Extend\Library\ARRAY_OP::array_raggruppa([ 'data'=>$menus,'key'=>['id_padre'] ]);
     $menus=Theme::getXmlMenu();
-?>
+@endphp
             @if(isset($menus[0]))
             @foreach($menus[0] as $el)
-            <li>
-                <a href="#{{$el->id}}" class="vis{{$el->visibility}}"><i class="{{-- $el->icons --}} fa-fw"></i>{{$el->nome}}
+            <li @if($el->active) class="active" @endif>
+                <a href="#{{$el->id}}" class="vis{{$el->visibility}} "><i class=" fa-fw"></i>{{$el->nome}}
                 @if(isset($menus[$el->id])) <span class="fa arrow"></span> </a>
                 <ul class="nav nav-second-level">
                     @foreach($menus[$el->id] as $sub_el)
-                    <li><a href="{{$sub_el->url}}">{{$sub_el->nome}}</a></li>
+                    <li @if($sub_el->active) class="active" @endif><a href="{{$sub_el->url}}">{{$sub_el->nome}}  </a></li>
                     @endforeach
                 </ul>
                 @endif
@@ -37,3 +37,4 @@
     </div>
     <!-- /.sidebar-collapse -->
 </div>
+
