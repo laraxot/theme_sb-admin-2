@@ -12,7 +12,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url ('') }}">@yield('page_heading')</a>
+                <a class="navbar-brand" href="{{ url ('#') }}">@yield('page_heading')</a>
+                <a class="navbar-brand" href="{{ url ('/admin') }}"><small>backend</small></a>
+                <a class="navbar-brand" href="{{ url ('/') }}" target="_blank"><small>frontend</small></a>
             </div>
             <!-- /.navbar-header -->
             <ul class="nav navbar-top-links navbar-right">
