@@ -24,16 +24,16 @@
 	{{ Theme::addStyle('/theme/css/styles.css') }}
 	--}}
 	<!-- Bootstrap Core CSS -->
-    {{ Theme::addStyle("/theme/bc/bootstrap/dist/css/bootstrap.min.css") }}
+    {{ Theme::addStyle("/theme/bc/bootstrap/dist/css/bootstrap.min.css",1) }}
 
     <!-- MetisMenu CSS -->
-    {{ Theme::addStyle("/theme/bc/metisMenu/dist/metisMenu.min.css") }}
+    {{ Theme::addStyle("/theme/bc/metisMenu/dist/metisMenu.min.css",2) }}
 
     <!-- Custom CSS -->
-    {{ Theme::addStyle("/theme/bc/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css")  }}
+    {{ Theme::addStyle("/theme/bc/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css",3)  }}
 
     <!-- Custom Fonts -->
-    {{ Theme::addStyle("/theme/bc/font-awesome/css/font-awesome.min.css") }}
+    {{ Theme::addStyle("/theme/bc/font-awesome/css/font-awesome.min.css",4) }}
 
 
 	
@@ -53,13 +53,13 @@
 	{{-- Theme::addScript('/theme/js/frontend.js') --}}
 	
 
-	{{ Theme::addScript("/theme/bc/jquery/dist/jquery.min.js") }}
+	{{ Theme::addScript("/theme/bc/jquery/dist/jquery.min.js",1) }}
 
     {{ Theme::addScript("/theme/bc/bootstrap/dist/js/bootstrap.min.js") }}
     {{ Theme::addScript("/theme/bc/metisMenu/dist/metisMenu.min.js") }}
 
   
-    <!-- Custom Theme JavaScript -->
+    {{--   Custom Theme JavaScript --}}
     {{ Theme::addScript("/theme/bc/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js")  }}
 
 	{{ Theme::addScript('/theme/js/xot.js') }}
