@@ -47,6 +47,7 @@
 	<script src="{{ asset("/theme/js/frontend.js") }}" type="text/javascript"></script>
 	--}}
 	<script>
+	lang = "{{ \App::getLocale() }}";
 	base_url="{{ url('/')  }}";
 	</script>
 	
