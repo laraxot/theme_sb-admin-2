@@ -2,16 +2,28 @@
 @section('page_heading','DashBoard')
 
 @section('content')
-    <div>  
-        @foreach(\Auth::User()->areas()->get() as $row)
+    <div>
+        @php
+            $rows=\Auth::User()->areas();
+
+            //dd($rows->with(['area'])->get());
+            //dd($rows);
+            //echo '<pre>';print_r($rows->toSql());echo '</pre>';
+            //echo '<pre>';print_r($rows->get()->toArray());echo '</pre>';
+            //dd();
+        @endphp  
+        @foreach($rows->get() as $row)
+            @php
+                //echo '<pre>';print_r($row->Area->first());echo '</pre>';
+            @endphp
             <div class="col-lg-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <small>{{$row->area_define_name}}</small>
+                        <small>{{ $row->area->area_define_name }}</small>
                     </div>
                     <div class="panel-body" style="text-align:center;">
-                        <a href="{{ $row->a_href() }}">
-                            <img src="{{$row->icon_src()}}" style="width:50px;height:50px;"/>
+                        <a href="{{ $row->area->a_href() }}">
+                            <img src="{{ $row->area->icon_src() }}" style="width:50px;height:50px;"/>
                         </a>
                     </div>
                 </div>
