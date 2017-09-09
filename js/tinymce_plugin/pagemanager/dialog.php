@@ -1,62 +1,61 @@
 <?php
-if(isset($_POST['submit'])){
-
-include('upload.php');
-
-}else{
-
-include 'config.php';
-include('utils.php');
-
-
-function deleteDir($dirPath) {
-    if (! is_dir($dirPath)) {
-        return false;
-    }
-    if (substr($dirPath, strlen($dirPath) - 1, 1) != '/') {
-        $dirPath .= '/';
-    }
-    $files = glob($dirPath . '*', GLOB_MARK);
-    foreach ($files as $file) {
-        if (is_dir($file)) {
-            deleteDir($file);
-        } else {
-            unlink($file);
-        }
-    }
-    rmdir($dirPath);
-}
-
-if (isset($_GET['fldr']) && !empty($_GET['fldr'])) {
-    $subdir = trim($_GET['fldr'],'/') . '/';
-}
-else
-    $subdir = '';
-
-$cur_dir = $upload_dir . $subdir;
-$cur_path = $current_path . $subdir;
-
-
-if (isset($_GET['del_file'])) {
-    @unlink($root. $cur_dir . $_GET['del_file']);
-    @unlink( "thumbs/".$subdir.$_GET['del_file']);
-}
-
-if (isset($_GET['del_folder'])) {
-    @ deleteDir($root. $cur_dir . $_GET['del_folder']);
-    @ deleteDir("thumbs/".$subdir. $_GET['del_folder']);
-}
-
-if (isset($_GET['lang']) && $_GET['lang'] != 'undefined' && is_readable('lang/' . $_GET['lang'] . '.php')) {
-    require_once 'lang/' . $_GET['lang'] . '.php';
+if (isset($_POST['submit'])) {
+    include('upload.php');
 } else {
-    require_once 'lang/en_EN.php';
-}
-if(!isset($_GET['type'])) $_GET['type']=0;
-if(!isset($_GET['field_id'])) $_GET['field_id']='';
+    include 'config.php';
+    include('utils.php');
 
 
-?>
+    function deleteDir($dirPath)
+    {
+        if (! is_dir($dirPath)) {
+            return false;
+        }
+        if (substr($dirPath, strlen($dirPath) - 1, 1) != '/') {
+            $dirPath .= '/';
+        }
+        $files = glob($dirPath . '*', GLOB_MARK);
+        foreach ($files as $file) {
+            if (is_dir($file)) {
+                deleteDir($file);
+            } else {
+                unlink($file);
+            }
+        }
+        rmdir($dirPath);
+    }
+
+    if (isset($_GET['fldr']) && !empty($_GET['fldr'])) {
+        $subdir = trim($_GET['fldr'], '/') . '/';
+    } else {
+        $subdir = '';
+    }
+
+    $cur_dir = $upload_dir . $subdir;
+    $cur_path = $current_path . $subdir;
+
+
+    if (isset($_GET['del_file'])) {
+        @unlink($root. $cur_dir . $_GET['del_file']);
+        @unlink("thumbs/".$subdir.$_GET['del_file']);
+    }
+
+    if (isset($_GET['del_folder'])) {
+        @ deleteDir($root. $cur_dir . $_GET['del_folder']);
+        @ deleteDir("thumbs/".$subdir. $_GET['del_folder']);
+    }
+
+    if (isset($_GET['lang']) && $_GET['lang'] != 'undefined' && is_readable('lang/' . $_GET['lang'] . '.php')) {
+        require_once 'lang/' . $_GET['lang'] . '.php';
+    } else {
+        require_once 'lang/en_EN.php';
+    }
+    if (!isset($_GET['type'])) {
+        $_GET['type']=0;
+    }
+    if (!isset($_GET['field_id'])) {
+        $_GET['field_id']='';
+    } ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -77,7 +76,7 @@ if(!isset($_GET['field_id'])) $_GET['field_id']='';
 
 		    //dropzone config
 		    Dropzone.options.myAwesomeDropzone = {
-			    dictInvalidFileType: "<?php echo lang_Error_extension;?>",
+			    dictInvalidFileType: "<?php echo lang_Error_extension; ?>",
 			    dictFileTooBig: "<?php echo lang_Error_Upload; ?>",
 			    dictResponseError: "SERVER ERROR",
 			    paramName: "file", // The name that will be used to transfer the file
@@ -88,7 +87,7 @@ if(!isset($_GET['field_id'])) $_GET['field_id']='';
 			      if ($.inArray(extension, allowed_ext) > -1) {
 				done();
 			      }
-			      else { done("<?php echo lang_Error_extension;?>"); }
+			      else { done("<?php echo lang_Error_extension; ?>"); }
 			    }
 		    };
 	    </script>
@@ -103,7 +102,8 @@ if(!isset($_GET['field_id'])) $_GET['field_id']='';
 		<input type="hidden" id="new_folder" value="<?php echo lang_New_Folder; ?>" />
 		<input type="hidden" id="base_url" value="<?php echo $base_url?>"/>
 		
-<?php if($upload_files){ ?>
+<?php if ($upload_files) {
+        ?>
 <!----- uploader div start ------->
 <div class="uploader">    
 	<form action="dialog.php" method="post" enctype="multipart/form-data" id="myAwesomeDropzone" class="dropzone">
@@ -124,7 +124,8 @@ if(!isset($_GET['field_id'])) $_GET['field_id']='';
 </div>
 <!----- uploader div start ------->
 
-<?php } ?>		
+<?php
+    } ?>		
           <div class="container-fluid">
           
 
@@ -157,4 +158,5 @@ if(!isset($_GET['field_id'])) $_GET['field_id']='';
     <!----- loading div end ------->  
 </body>
 </html>
-<?php } ?>
+<?php
+} ?>
