@@ -1,7 +1,7 @@
 $(function() {
 //$( document ).ready(function() {
-$.getScript(base_url+'/theme/bc/moment/min/moment.min.js', function() {    
-$.getScript(base_url+'/theme/bc/bootstrap-daterangepicker/daterangepicker.js', function() {
+$.getScript(base_url+'/bc/moment/min/moment.min.js', function() {    
+$.getScript(base_url+'/bc/bootstrap-daterangepicker/daterangepicker.js', function() {
 	//var $j = jQuery.noConflict();
     $('.datepicker').daterangepicker({ 
         timePicker: true,
