@@ -2,6 +2,11 @@
 @section('page_heading','DashBoard')
 
 @section('content')
+@php
+    dd(Auth::User()->areaAdminAreas);
+@endphp
+
+
     <div>
         @foreach(\Auth::User()->areas as $row)
             <div class="col-lg-2">
