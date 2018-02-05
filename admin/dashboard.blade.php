@@ -3,7 +3,7 @@
 
 @section('content')
 @php
-    dd(Auth::User()->areaAdminAreas);
+    //dd(Auth::User()->areaAdminAreas);
 @endphp
 
 
