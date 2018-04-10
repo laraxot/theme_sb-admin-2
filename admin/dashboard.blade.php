@@ -2,13 +2,8 @@
 @section('page_heading','DashBoard')
 
 @section('content')
-@php
-    //dd(Auth::User()->areaAdminAreas);
-@endphp
-
-
     <div>
-        @foreach(\Auth::User()->areas as $row)
+        @foreach(\Auth::User()->areas->unique('area_define_name') as $row)
             <div class="col-lg-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -16,7 +11,10 @@
                     </div>
                     <div class="panel-body" style="text-align:center;">
                         <a href="{{ $row->url }}">
+                            {!! $row->imageHtml(['width'=>50,'height'=>50]) !!}
+                            {{--  
                             <img src="{{ $row->icon_src }}" style="width:50px;height:50px;"/>
+                            --}}
                         </a>
                     </div>
                 </div>
