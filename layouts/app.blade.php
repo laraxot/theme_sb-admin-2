@@ -46,6 +46,7 @@
             </div>
             <!-- /#page-wrapper -->
         </div>
+		@include('adm_theme::layouts.partials.footer')
     </div>
 @stop
 

@@ -15,10 +15,9 @@
             </li>  
         --}}
 @php
-    //$menus=XRA\Extend\Library\XMLMENU_OP::get();
-    //$menus=XRA\Extend\Library\ARRAY_OP::array_raggruppa([ 'data'=>$menus,'key'=>['id_padre'] ]);
     $menus=Theme::getXmlMenu();
 @endphp
+
             @if(isset($menus[0]))
             @foreach($menus[0] as $el)
             <li @if($el->active) class="active" @endif>

@@ -21,7 +21,7 @@ if (isset($_GET['type'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Inserisci il tag </title>
+	<title>Inserisci il tag (EnteWeb)</title>
 	<meta charset="UTF-8">
 	<style>
 	img{border:none;}
@@ -46,7 +46,7 @@ if (isset($_GET['type'])) {
 			<tr>
 				<td valign="top">
 					
-					<span>Inserisci il tag </span>
+					<span>Inserisci il tag (EnteWeb)</span>
 					
 					<div class="panel_wrapper">
 						<div id="general_panel" class="panel current">
