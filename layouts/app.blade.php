@@ -28,7 +28,7 @@
                 @include('adm_theme::layouts.dropdown-user')
             </ul>
             <!-- /.navbar-top-links -->
-            @include('adm_theme::layouts.sidebar')
+            @include('adm_theme::layouts.partials.sidebar')
             <!-- /.navbar-static-side -->
         </nav>
 
