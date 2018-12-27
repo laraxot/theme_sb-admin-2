@@ -1,4 +1,4 @@
-<?php 
+<?php
 $path=$_POST['path'];
 $name=$_POST['name'];
 

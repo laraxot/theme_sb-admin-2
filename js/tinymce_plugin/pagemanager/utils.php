@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function create_img_gd($imgfile, $imgthumb, $newwidth, $newheight="")
 {

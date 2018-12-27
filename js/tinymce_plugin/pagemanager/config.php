@@ -1,4 +1,4 @@
-<?php 
+<?php
 $root = rtrim($_SERVER['DOCUMENT_ROOT'], '/'); // don't touch this configuration
 
 //**********************
