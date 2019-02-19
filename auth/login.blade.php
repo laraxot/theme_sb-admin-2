@@ -21,6 +21,7 @@
             {!!Form::open(['url'=>'/login','class'=>'form form-horizontal'])!!}
             --}}
             <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
+            @csrf    
             <fieldset>
                 <div class="form-group">
                     <label class="control-label">Ente</label>
