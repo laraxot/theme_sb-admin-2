@@ -17,8 +17,10 @@
                             </ul>
                         </div>
                     @endif
-                    
+            {{--  
             {!!Form::open(['url'=>'/login','class'=>'form form-horizontal'])!!}
+            --}}
+            <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
             <fieldset>
                 <div class="form-group">
                     <label class="control-label">Ente</label>
@@ -44,7 +46,7 @@
                 </div>
                 <!-- Change this to a button or input when using this as a form -->
                 {!!Form::submit('Login',['class'=>'btn btn-lg btn-success btn-block'])!!}
-                <a class="btn btn-link" href="{{ url('/password/reset') }}">
+                <a class="btn btn-link" href="{{ route('password.request') }}">
                 Ridammi la Password !
                 </a>
             </fieldset>
